@@ -1,0 +1,43 @@
+<div class="container">
+    <div>
+        <h2>Ajouter Un Album :</h2>
+    </div>
+
+    <form>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Album : </label>
+            <input type="text" [(ngModel)]="newAlbum.id" name="idAlbum" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4" >
+            <label>Album Title : </label>
+            <input type="text" [(ngModel)]="newAlbum.title" name="titleAlbum" class="form-control">
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Artist Name : </label>
+            <input type="text" [(ngModel)]="newAlbum.artist" name="artistAlbum" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Release Date : </label>
+            <input type="date" [(ngModel)]="newAlbum.releaseDate" name="releaseDateAlbum" class="form-control">
+        </div>
+
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Genre : </label>
+            <input type="text" [(ngModel)]="newAlbum.genre" name="genreAlbum" class="form-control">
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Label :</label>
+            <select name="idLab" id="idLab" class="form-control form-control-lg" [(ngModel)]="newIdLabel">
+                <option *ngFor="let label of labels" [value]="label.idLabel">{{label.labelName}}</option>
+            </select>
+        </div>
+
+        <div class="mt-2">
+            <button type="submit" class="btn btn-primary" (click)="addAlbum()">Ajouter</button>
+        </div>
+    </form>
+</div>
